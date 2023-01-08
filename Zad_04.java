@@ -1,6 +1,7 @@
 import java.io.*;
+import java.math.BigDecimal;
 import java.util.Scanner;
-
+import java.math.BigInteger;
 public class Main {
     public static int countChar(String str, char c) {
         int ilosc = 0;
@@ -177,5 +178,17 @@ public class Main {
         System.out.print("nice2: " + nice(str1, liczba) + "\n");
         System.out.print("plik: " + plik(literka) + "\n");
         System.out.print("plik2: " + plik(str2) + "\n");
+        BigInteger big = new BigInteger(String.valueOf(1));
+        for(int i = 0;i<2*4;i++){
+            big = big.multiply(new BigInteger("2"));
+        }
+        System.out.print("Ziarenka maku: "+big);
+        BigDecimal k = new BigDecimal("2000");
+        BigDecimal jedne = new BigDecimal("1");
+        BigDecimal sto = new BigDecimal("100");
+        BigDecimal n = new BigDecimal("4");
+        BigDecimal p = new BigDecimal("6");
+        k = k.multiply(jedne.add(p.divide(sto)).pow(n.intValue()));
+        System.out.print(k);
     }
 }
